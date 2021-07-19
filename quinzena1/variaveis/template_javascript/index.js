@@ -16,38 +16,38 @@ t = salarioDiario
 
 //EXERCICIO DE ESCRITA DE CÓDIGO:
 //Exercicio 1
-let nome
-let idade
+let nome;
+let idade;
 
-console.log(typeof nome)
-console.log(typeof idade)
+console.log(typeof nome);
+console.log(typeof idade);
 //Resposta: Deu erro underfined pois não foi atribuido os valores as variáveis
 
-let nome = prompt("Qual o seu nome?")
-console.log(typeof nome)
+nome = prompt("Qual o seu nome?");
+console.log(typeof nome);
 
-let idade = prompt ("Qual a sua idade?")
-console.log(typeof idade)
+idade = prompt("Qual a sua idade?");
+console.log(typeof idade);
 
-console.log("Olá", nome ,"você tem", idade ,"anos.")
+console.log("Olá", nome ,"você tem", idade ,"anos.");
 
 //Exercício 2
-let ehEstudante = true
-let diaDeSol = true
-let desanimada = false
+let ehEstudante = prompt("Você é estudante?");
+let diaDeSol = prompt("Hoje está sol?");
+let desanimada = prompt("Você está desanimada?");
 
-console.log(ehEstudante)
-console.log(diaDeSol)
-console.log(desanimada)
+console.log("Você é estudante? - ",ehEstudante);
+console.log("Hoje está sol? - ",diaDeSol);
+console.log("Você está desanimada? - ",desanimada);
 
-//Exercício 3
-let a = 10
-let b = 25
-let c
+//Exercicio 3
+let a = 10;
+let b = 25;
+let c;
 
-a=c
-b=a
-c=b
+c=a;
+a=b;
+b=c;
 
-console.log("o novo valor de a é,"a)
-console.log("o novo valor de b,"b)
+console.log("o novo valor de a é",a);
+console.log("o novo valor de b é",b);
