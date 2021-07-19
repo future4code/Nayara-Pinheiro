@@ -51,3 +51,10 @@ b=c;
 
 console.log("o novo valor de a é",a);
 console.log("o novo valor de b é",b);
+
+//DESAFIO
+let primeiroNumero = Number(prompt("Escreve um número:"));
+let segundoNumero = Number(prompt("Escolha outro número:"));
+
+console.log("O primeiro número somado ao segundo número resulta em:", primeiroNumero+segundoNumero);
+console.log("O primeiro número multiplicado pelo segundo número resulta em:",primeiroNumero*segundoNumero);
