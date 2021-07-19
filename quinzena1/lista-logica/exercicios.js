@@ -23,16 +23,25 @@ function imprimeMensagem() {
 // Exercício 1
 function calculaAreaRetangulo() {
   // escreva seu código aqui
+ const altura = Number(prompt("Digite a altura do triângulo:"));
+ const largura = Number(prompt("Digite a largura do triângulo:"));
+ 
+ console.log(altura*largura);
 }
 
 // Exercício 2
 function imprimeIdade() {
   // escreva seu código aqui
+  const anoAtual = Number(prompt("Digite o ano atual:"));
+  const anoNascimento = Number(prompt("Qual o ano do seu nascimento:"));
+
+  console.log(anoAtual-anoNascimento);
 }
 
 // Exercício 3
 function calculaIMC() {
   // escreva seu código aqui
+  const peso = 
 }
 
 // Exercício 4
