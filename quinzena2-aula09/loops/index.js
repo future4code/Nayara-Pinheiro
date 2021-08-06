@@ -3,7 +3,7 @@
 //1 Ele esta fazendo a progressão de Fibonacci o valor impresso seria: 10
 
 //2 -a) 19,21,23,25,27,30
-//2-b) Talvez seja suficiente porem não consegui uma forma de conseguir sem utilizar uma variável
+//2-b) somente o for of não é suficiente pois irá precisar de pelo menos mais uma ferramenta, como indexOff!
 
 //3
 //*
@@ -87,3 +87,18 @@ function pegaMaiorEoMenorNumero (numeros){
 }
 
 pegaMaiorEoMenorNumero(arrayOriginal);
+
+//DESAFIO
+// //1
+//Não terminei vou tentar termina depois por isso vou deixar comentado, por hoje não está dando mais:
+// var numeroResposta = Number(prompt("1 Jogador: Escolha um número:"));
+// console.log("Vamos jogar!");
+
+// function descobriONumeroDoJogadorUm(numero){
+// let adivinhaNumero = Number(prompt("Adivinhe o número?"));
+// console.log(`O número chutado foi: ${adivinhaNumero}`);
+// while(adivinhaNumero===numeroResposta){
+
+// }
+
+// }
