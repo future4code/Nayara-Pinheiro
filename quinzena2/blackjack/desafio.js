@@ -1,57 +1,65 @@
-/**
- * EXEMPLO DE UTILIZAÇÃO DA 'comprarCarta'
- * 
- * 
-    const carta = comprarCarta(); // Sorteia uma carta. Por exemplo, o rei de ouros
-    
-    console.log(carta.texto) // imprime o texto da carta. Exemplo: "K♦️" (indica "K" de ouros)
-    console.log(carta.valor) // imprime o valor da carta (um número). Exemplo: 10 (dado que "K" vale 10)
- * 
- * 
- * 
- */
-    console.log("Bem vindo ao jogo de Blackjack!");
+console.log("Bem vindo ao jogo de Blackjack!");
 
-    confirm("Quer iniciar uma nova partida?");
-    
-    function rodada(){
-       const carta1Usuario = comprarCarta();
-       const carta2Usuario = comprarCarta();
-      if(carta1Usuario==="A" && carta2Usuario==="A"){
-         function rodada();
-      } else {
-         const carta1Computador = comprarCarta();
-         const carta2Computador = comprarCarta();
-      }
+let inicioDePartida = confirm("Quer iniciar uma nova partida?");
+if (inicioDePartida) {
+   rodada();
+}else{
+   console.log("O jogo acabou!");
+}
 
+    
+function rodada(){
+   let cartasUser = [];
+   let cartasPc = [];
 
-      
-    
-       const pontuacaoUsuario = carta1Usuario.valor + carta2Usuario.valor;
-       const pontuacaoComputador = carta1Computador.valor + carta2Computador.valor;
-    
-       console.log(`Usuário - cartas: ${carta1Usuario.texto} ${carta2Usuario.texto} - ${pontuacaoUsuario}`);
-       console.log(`Computador - cartas: ${carta1Computador.texto} ${carta2Computador.texto} - ${pontuacaoComputador}`);
-       
-       if (pontuacaoUsuario > pontuacaoComputador) {
-                 console.log("O usuário ganhou!")
-             } else if (pontuacaoComputador > pontuacaoUsuario) {
-                 console.log("O computador ganhou!")
-             } else if (pontuacaoUsuario === pontuacaoComputador) {
-                 console.log("Empate!")
-             }
-       
-       finalDaPartida();
-    }
-    
-   //  function finalDaPartida(){
-   //     let oJogo = confirm("Quer iniciar uma nova partida?");
-   //     if (oJogo) {
-   //        rodada();
-   //     }else{
-   //        console.log("O jogo acabou!");
-   //     }
-   //  }
-   //  rodada();
-    
+   cartasUser.push(comprarCarta());
+   cartasUser.push(comprarCarta());
+   cartasPc.push(comprarCarta());
+   cartasPc.push(comprarCarta());
 
+   if((cartasUser[0].valor===11 && cartasUser[1].valor===11) || (cartasPc[0].valor===11 && cartasPc[1].valor===11)){
+      rodada(); 
+      return  
+   }else{
+      desejaContinuarPartida(cartasUser,cartasPc);
+   }
+}
+
+function desejaContinuarPartida(cartasUser, cartasPc){
+   let userString = "";
+   let valordasCartas = 0;
+   for(let carta of cartasUser){
+      userString += carta.texto;
+      valordasCartas += carta.valor;    
+   }
+   if(valordasCartas>=21){
+      finalizarPartida(valordasCartas,userString,cartasPc);
+      return
+   }
+   let continuarPartida = confirm(`Suas cartas são ${userString}. A carta revelada do computador é ${cartasPc[0].texto} \n
+   Deseja comprar mais uma carta?`)
+   if (continuarPartida) {
+      cartasUser.push(comprarCarta())
+      desejaContinuarPartida(cartasUser,cartasPc);
+   }else{
+      finalizarPartida(valordasCartas,userString,cartasPc);
+   }  
+}
+
+function finalizarPartida(valordasCartas,userString,cartasPc){
+   let pontuacaoUsuario = valordasCartas;
+   let pontuacaoComputador = cartasPc[0].valor+cartasPc[1].valor;
+   if (pontuacaoUsuario > pontuacaoComputador) {
+      console.log(`Suas cartas são ${userString}. Sua pontuação é ${pontuacaoUsuario}. \n
+      As cartas do Computador são ${cartasPc[0].texto} e ${cartasPc[1].texto}. A pontuação do computador é ${pontuacaoComputador}. \n
+      Você Ganhou!`)
+   } else if (pontuacaoComputador > pontuacaoUsuario) {
+      console.log(`Suas cartas são ${userString}. Sua pontuação é ${pontuacaoUsuario}. \n
+      As cartas do Computador são ${cartasPc[0].texto} e ${cartasPc[1].texto}. A pontuação do computador é ${pontuacaoComputador}. \n
+      O computador ganhou!`)
+   } else if (pontuacaoUsuario === pontuacaoComputador) {
+      console.log(`Suas cartas são ${userString}. Sua pontuação é ${pontuacaoUsuario}. \n
+      As cartas do Computador são ${cartasPc[0].texto} e ${cartasPc[1].texto}. A pontuação do computador é ${pontuacaoComputador}. \n
+      Empate!`)
+   }
+}
