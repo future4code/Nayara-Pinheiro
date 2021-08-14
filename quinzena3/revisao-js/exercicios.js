@@ -1,14 +1,23 @@
 // EXERCÍCIO 01
 function inverteArray(array) {
-  for(let i = array.length -1; i >= 0; i--){
-    console.log(i);
-    }
+  let arrayInvertido = []
+  for (let i = array.length - 1;i >= 0;i--) {
+    arrayInvertido.push(array[i]);
+  }
+  return arrayInvertido;
 }
 
 // EXERCÍCIO 02
 function retornaNumerosParesElevadosADois(array) {
-
+  let arrayDeNumerosParesElevadosADois = []
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] % 2 === 0) {
+     arrayDeNumerosParesElevadosADois.push(array[i] * array[i]);
+    }
+  }
+  return arrayDeNumerosParesElevadosADois;
 }
+
 
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
