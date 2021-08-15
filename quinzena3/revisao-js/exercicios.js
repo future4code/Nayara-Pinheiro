@@ -96,8 +96,36 @@ function comparaDoisNumeros(num1, num2) {
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
+  let menor = Infinity;
+  let maior = -Infinity;
+    let segundoMaiorEMenorNumero = [];
 
+  for (let i of array) {
+    if (i < menor) {
+      menor = i;
+    }
+    if (i > maior) {
+      maior = i;
+    }
+  }
+
+  let segundoMenor = Infinity;
+  let segundoMaior = -Infinity;
+
+  for (let i of array) {
+    if (i < segundoMenor && i !== menor) {
+      segundoMenor = i;
+    }
+    if (i > segundoMaior && i !== maior) {
+      segundoMaior = i;
+    }
+  }
+  segundoMaiorEMenorNumero.push(segundoMaior);
+  segundoMaiorEMenorNumero.push(segundoMenor);
+
+  return segundoMaiorEMenorNumero;
 }
+
 
 // EXERCÍCIO 11
 function ordenaArray(array) {
