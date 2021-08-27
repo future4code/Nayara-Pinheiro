@@ -111,6 +111,7 @@ div:last-child {
 
 table {
     width: 60%;
+   
 }
 
 #tabela-compras img {
@@ -139,6 +140,14 @@ td button:hover{
 .container-do-search {
     margin-top: 20px;
     height: 100px;
+      
+}
+
+.compras-tabela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 #tabela-compras{
