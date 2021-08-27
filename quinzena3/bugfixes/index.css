@@ -122,7 +122,11 @@ td button {
     width: 150px;
     height: 30px;
     border-radius: 5px;
-    color: black;    
+    color: black;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom-width: medium;   
 }
 td button:hover{
     background-color: #eec50c;
