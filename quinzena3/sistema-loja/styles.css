@@ -1,0 +1,53 @@
+#title-da-loja{
+    color: plum;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    justify-content: center;
+    background-color: rgb(255, 222, 244);
+}
+
+#fundo{
+    background-color: rgb(232, 166, 210);
+   }
+
+#imagem-home{
+    display: inline;
+    justify-content: center;
+    margin-left: 300px;
+}
+
+
+div{
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 150px;
+    display: inline;
+}
+
+a:hover {
+    display: inline;
+    text-decoration: underline overline;
+	color:rgb(255, 222, 244);
+	}
+
+
+#mensagem-principal{
+    display: flex;
+    justify-content: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:medium;
+}
+
+#redes-sociais{
+    display:inline-flex;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border: 0px;
+    margin: 0px;
+    }
