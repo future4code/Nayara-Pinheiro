@@ -61,7 +61,6 @@ class Post extends React.Component {
         curtido:true,
       })
     }
-    
   }
 
   onClickComentario = () => {
