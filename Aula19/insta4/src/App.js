@@ -14,9 +14,19 @@ class App extends React.Component {
     return (
       <MainContainer>
         <Post
-          nomeUsuario={'paulinha'}
+          nomeUsuario={'Nayara'}
           fotoUsuario={'https://picsum.photos/50/50'}
           fotoPost={'https://picsum.photos/200/150'}
+        />
+        <Post
+          nomeUsuario={'Dara'}
+          fotoUsuario={'https://picsum.photos/id/237/200/300'}
+          fotoPost={'https://picsum.photos/seed/picsum/200/300'}
+        />
+        <Post
+          nomeUsuario={'Lívia'}
+          fotoUsuario={'https://picsum.photos/200/300?grayscale'}
+          fotoPost={'https://picsum.photos/200/300/?blur=2'}
         />
       </MainContainer>
     );
@@ -24,3 +34,4 @@ class App extends React.Component {
 }
 
 export default App;
+

@@ -50,6 +50,9 @@ class Post extends React.Component {
 
   onClickCurtida = () => {
     console.log('Curtiu!')
+    this.setState({
+      numeroCurtidas: this.state.numeroCurtidas + 1
+    })
   }
 
   onClickComentario = () => {
