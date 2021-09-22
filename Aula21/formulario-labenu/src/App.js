@@ -7,7 +7,6 @@ import Etapa3 from './componentes/Etapa3';
 import Etapa4 from './componentes/Etapa4';
 
 const Container = styled.div`
-  flex-direction:center;
   justify-content:center;
 `
 
@@ -28,30 +27,24 @@ class App extends React.Component {
     this.setState({etapa: this.state.etapa + 1});
   }
 
-  // renderizaEtapa = () => {
-  //   switch (this.state.evento) {
-  //       case 1: 
-  //         return <Etapa1 />;
-  //       case 2:
-  //         return <Etapa2 />;
-  //       case 3:
-  //         return <Etapa3 />;
-  //       case 4:
-  //         return <Etapa4 />;
-  //       default:
-  //         return null;
-  // };
-
-  
-
-  render () {
-    
-
-
+  renderizaEtapa = () => {
+       switch (this.state.etapa) {
+        case 1: 
+          return <Etapa1 />;
+        case 2:
+          return <Etapa2 />;
+        case 3:
+          return <Etapa3 />;
+        case 4:
+          return <Etapa4 />;
+        default:
+          return null;
+  };
+  render() {
     return (
       <Container>
-      {/* {this.renderizaEtapa()} */}
-      <Botao onClick ={this.irParaProximaEtapa}>
+       {this.renderizaEtapa()}
+      <Botao>
       Próxima Etapa
       </Botao>  
       </Container> 
