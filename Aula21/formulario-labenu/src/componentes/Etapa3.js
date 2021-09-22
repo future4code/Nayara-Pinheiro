@@ -28,7 +28,7 @@ class Etapa3 extends React.Component {
         cursoComplementar: "",
 };
 
-onChangemotivo = (event) => {
+onChangeMotivo = (event) => {
     this.setState({ motivo: event.target.value });
 }
 
@@ -43,8 +43,8 @@ onChangeCursoComplementar = (event) => {
         <h1>ETAPA 3 - INFORMAÇÕES GERAIS DE ENSINO</h1>
         <h3>5. Por que você não terminou um curso de graduação?</h3>
         <Input
-            value={this.state.cursando}
-            onChange={this.onChangeCursando}
+            value={this.state.motivo}
+            onChange={this.onChangeMotivo}
         /> 
         <h3>6. Você fez algum curso complementar?</h3>
         <Selects>

@@ -23,10 +23,6 @@ class App extends React.Component {
     etapa: 1,
   }
 
-  irParaProximaEtapa = () => {
-    this.setState({etapa: this.state.etapa + 1});
-  }
-
   renderizaEtapa = () => {
        switch (this.state.etapa) {
         case 1: 
@@ -35,16 +31,20 @@ class App extends React.Component {
           return <Etapa2 />;
         case 3:
           return <Etapa3 />;
-        case 4:
+         default:
           return <Etapa4 />;
-        default:
-          return null;
   };
+}
+
+irParaProximaEtapa = () => {
+  this.setState({etapa: this.state.etapa + 1});
+}
+
   render() {
     return (
       <Container>
-       {this.renderizaEtapa()}
-      <Botao>
+      {this.renderizaEtapa()}
+      <Botao onClick = {() => this.irParaProximaEtapa()}>
       Próxima Etapa
       </Botao>  
       </Container> 
