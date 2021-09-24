@@ -20,7 +20,18 @@ const InputsContainer = styled.div`
 
 class App extends React.Component {
     state = {
-      tarefas: [],
+      tarefas: [
+        {
+          id: Date.now(),
+          texto: 'Texto da tarefa',
+          completa: true
+        },
+        {
+          id: Date.now(),
+          texto: 'Texto da segunda tarefa',
+          completa: false
+        }
+      ],
       inputValue: '',
       filtro: ''
     }
@@ -34,7 +45,8 @@ class App extends React.Component {
   };
 
   onChangeInput = (event) => {
-
+    this.setState({inputValue:event.target.value})
+		console.log(event.target.value)
   }
 
   criaTarefa = () => {
