@@ -41,7 +41,8 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-
+    const tarefasString = localStorage.getItem("tarefas");
+    const tarefaConvertida = JSON.parse(localStorage.getItem("tarefas"));
   };
 
   onChangeInput = (event) => {
