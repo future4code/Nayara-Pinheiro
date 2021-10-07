@@ -8,11 +8,47 @@
 		{
 			"name": "createPlaylist",
 			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nayara-pinheiro-banu",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Sertanejo\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPlaylists",
+			"request": {
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Nayara-Pinheiro-Banu",
+						"value": "nayara-pinheiro-banu",
 						"type": "text"
 					}
 				],
@@ -33,28 +69,19 @@
 			"response": []
 		},
 		{
-			"name": "getAllPlaylist",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
-			},
-			"response": []
-		},
-		{
 			"name": "addTrackToPlaylist",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Nayara-Pinheiro-Banu",
+						"value": "nayara-pinheiro-banu",
 						"type": "text"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Stay\",\r\n    \"artist\": \"The Kid LAROI e Justin Bieber\",\r\n    \"url\": \"https://music.youtube.com/watch?v=XfEMj-z3TtA&feature=share\"\r\n}",
+					"raw": "{\r\n    \"name\": \"Sugar\", \r\n    \"artist\": \"Maroon 5\",\r\n    \"url\": \"https://youtu.be/09R8_2nJtjg\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -78,7 +105,76 @@
 					"variable": [
 						{
 							"key": "playlistId",
-							"value": "027f1eaf-3d07-46cf-aab3-7064d5935d80"
+							"value": "8b896c18-6f4f-4514-accb-6a905d7ae9e8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPlaylistTracks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nayara-pinheiro-banu",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistId/tracks",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						":playlistId",
+						"tracks"
+					],
+					"variable": [
+						{
+							"key": "playlistId",
+							"value": "8b896c18-6f4f-4514-accb-6a905d7ae9e8"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "searchPlaylist",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "nayara-pinheiro-banu",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/search?name=pop",
+					"protocol": "https",
+					"host": [
+						"us-central1-labenu-apis",
+						"cloudfunctions",
+						"net"
+					],
+					"path": [
+						"labefy",
+						"playlists",
+						"search"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "pop"
 						}
 					]
 				}
