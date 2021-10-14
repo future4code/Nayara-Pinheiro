@@ -69,7 +69,7 @@ render (){
     return<>
         <Container>
             <h1>LABENUSERS</h1>
-            <button onClick={ListasDeUsuarios}>Troca de Página</button>
+            <button onClick={this.props.irParaLista}>Troca de Página</button>
             <h2>Criar usuário</h2>
             <input
             placeholder={'Nome'}
