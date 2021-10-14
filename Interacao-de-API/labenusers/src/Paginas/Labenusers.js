@@ -1,53 +1,36 @@
 import React from "react"; 
 import styled from 'styled-components';
 import axios from "axios";
-import ListasDeUsuarios from "./ListasUsusarios";
-
 
 const Container = styled.div`
     display: block;
     justify-content: center;
     aliens-itens:center;
 `
-const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
 
-const headers = {
-    headers: {
-      Authorization: "nayara-pinheiro-banu"
-    }
-  }; 
 
 class Labenusers extends React.Component {
     state = {
-        listaDeUsuarios: [],
         nomeUsuario: "",
         emailUsuario: ""
     };
 
-    componentDidMount() {
-        this.pegarListaDeUsuarios();
-      }
-
-    pegarListaDeUsuarios = () => {
-        axios
-          .get(url, headers)
-          .then((res) => {
-            this.setState({ listaDeUsuario: res.data.result.list });
-          })
-          .catch((err) => console.log(err));
-      };
-
     criarListaDeUsuarios = () => {
-        const body = {
-            nome:this.state.listaDeUsuarios
+      const url = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users";
+      const body = {
+            name: this.state.nomeUsuario,
+            email: this.state.emailUsuario
         };
-        axios
-      .post(url, body, headers)
+      axios.post(url, body, {
+        headers: {
+         Authorization: "nayara-pinheiro-banu"
+         }
+      })
       .then((res) => {
         console.log(res);
         this.setState({ nomeUsuario: "" });
         this.setState({ emailUsuario: "" });
-        this.pegarPlaylists();
+        alert("Usuário(a) cadastrado(a) com sucesso!")
       })
       .catch((err) => alert("Algo deu errado", err));
     };
@@ -62,9 +45,7 @@ class Labenusers extends React.Component {
 
 
 render (){
-    // const  listaUsuarios = this.state.listaDeUsuarios.map((listaDeUsuarios) => {
-    //     return <li key={listaDeUsuarios.id}>{listaDeUsuarios.nome}</li>;
-    //   });
+
 
     return<>
         <Container>
