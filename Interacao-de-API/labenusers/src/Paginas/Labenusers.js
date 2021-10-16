@@ -58,7 +58,7 @@ render (){
             onChange={this.onChangeNomeUsuario}
             />
             <input
-            placeholder='Email'
+            placeholder={'Email'}
             type={'email'}
             value={this.state.emailUsuario}
             onChange={this.onChangeEmailUsuario}
