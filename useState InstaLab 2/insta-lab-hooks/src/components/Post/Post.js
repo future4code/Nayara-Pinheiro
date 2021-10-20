@@ -26,12 +26,25 @@ const Post = (props) => {
   };
 
   const onClickComentario = () => {
+    setComentando(!comentando)
   };
 
   const enviarComentario = (comentario) => {
   }
 
   const iconeCurtida = curtido ? (iconeCoracaoPreto) : (iconeCoracaoBranco)
+
+  const caixaDeComentario = comentando ? (
+       <SecaoComentario enviarComentario={enviarComentario}/>
+    ) : (
+      comentarios.map(comentario => {
+        return (
+          <CommentContainer>
+            <p>{comentario}</p>
+          </CommentContainer>
+        )
+      })
+  )
 
 
   return (
@@ -56,7 +69,7 @@ const Post = (props) => {
           // valorContador={numeroComentarios}
         />
       </PostFooter>
-      {/* {caixaDeComentario} */}
+      {caixaDeComentario}
     </PostContainer>
   )
 }
