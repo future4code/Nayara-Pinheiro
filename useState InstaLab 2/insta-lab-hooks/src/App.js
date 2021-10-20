@@ -13,7 +13,7 @@ const App = () => {
   return (
     <AppContainer>
       <Post
-        nomeUsuario={'Usuário'}
+        nomeUsuario={'Nayara Davantel Costa'}
         fotoUsuario={'https://picsum.photos/50/50'}
         fotoPost={'https://picsum.photos/200/150'}
       />
