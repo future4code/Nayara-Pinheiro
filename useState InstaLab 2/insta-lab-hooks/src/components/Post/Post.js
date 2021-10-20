@@ -16,6 +16,13 @@ const Post = (props) => {
   const [comentarios, setComentarios] =useState([])
 
   const onClickCurtida = () => {
+    if(curtido){
+      setCurtido(!curtido)
+      setNumeroCurtidas(numeroCurtidas - 1)
+    }else{
+      setCurtido(!curtido)
+      setNumeroCurtidas(numeroCurtidas + 1)
+    }
   };
 
   const onClickComentario = () => {
@@ -23,6 +30,9 @@ const Post = (props) => {
 
   const enviarComentario = (comentario) => {
   }
+
+  const iconeCurtida = curtido ? (iconeCoracaoPreto) : (iconeCoracaoBranco)
+
 
   return (
     <PostContainer>
@@ -35,7 +45,7 @@ const Post = (props) => {
 
       <PostFooter>
         <IconeComContador
-          // icone={iconeCurtida}
+          icone={iconeCurtida}
           onClickIcone={onClickCurtida}
           // valorContador={numeroCurtidas}
         />
