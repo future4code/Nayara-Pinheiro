@@ -17,11 +17,11 @@ const Post = (props) => {
 
   const onClickCurtida = () => {
     if(curtido){
-      setCurtido(!curtido)
-      setNumeroCurtidas(numeroCurtidas - 1)
+      setCurtido(false)
+      setNumeroCurtidas(0)
     }else{
-      setCurtido(!curtido)
-      setNumeroCurtidas(numeroCurtidas + 1)
+      setCurtido(true)
+      setNumeroCurtidas(1)
     }
   };
 
@@ -30,11 +30,12 @@ const Post = (props) => {
   };
 
   const enviarComentario = (comentario) => {
-    const listaDeComentarios = [...comentarios, comentario]
-
-    setComentarios(listaDeComentarios);
-    setComentando(false);
     setNumeroComentarios(numeroComentarios+1)
+
+    const novaListaDeComentarios = [...comentarios, comentario]
+
+    setComentarios(novaListaDeComentarios);
+    setComentando(false);
   }
 
   const iconeCurtida = curtido ? (iconeCoracaoPreto) : (iconeCoracaoBranco)
