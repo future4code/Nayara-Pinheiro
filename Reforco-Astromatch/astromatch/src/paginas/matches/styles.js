@@ -25,3 +25,7 @@ export const CandidateContainer = styled.div`
     padding: 15px;
     height: 100%;
 `;
+
+export const Avatar = styled.img`
+    max-width: 60px;
+`

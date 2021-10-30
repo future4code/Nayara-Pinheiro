@@ -1,5 +1,8 @@
 import {HomePage,MatchesPage} from './paginas';
 import { useState } from 'react';
+import axios from 'axios';
+import { BASE_URL } from './constantes/baseUrl';
+
 
 function App() {
   const [pageName, setPageName] = useState("home");
@@ -23,11 +26,24 @@ function App() {
     }
   }
 
+  const cleanMatchers = () => {
+    const URL = `${BASE_URL}/clear`
+      axios.put(URL)
+        .then((res) => {
+           alert("Limpeza realizada com sucesso!")
+        })
+        .catch((err) => {
+            console.log(err.response)
+        })
+  }
+
+
+
   return (
    <div>
      {getPagina()}
      <button onClick={changePage}>{pageName === "home" ? "Ir para Matchers" : "Ir para Home"}</button>
-     <button>Ir Limpar Matches</button>
+     <button onClick={cleanMatchers}>Ir Limpar Matches</button>
    </div>
   );
 }
