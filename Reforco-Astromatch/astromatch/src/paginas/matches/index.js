@@ -39,13 +39,13 @@ export const MatchesPage = () => {
 
         useEffect(() => {
             getMatches()
-        },[MapMatchers]);
+        },[]);
 
 
     return(
         <PageContainer>
             <CandidateContainer>
-               { matches.length ? <MapMatchers/> : <p>Sem Matchers</p>} 
+               { matches.length ? <MapMatchers/> : <p>Vazio</p>} 
             </CandidateContainer>
         </PageContainer>
     )

@@ -25,8 +25,6 @@ export const HomePage = () => {
             })
         }
 
-
-
     const choosePerson = (boolean) => {
         const URL = `${BASE_URL}/choose-person` 
         const body = {

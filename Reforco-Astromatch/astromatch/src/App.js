@@ -29,8 +29,9 @@ function App() {
   const cleanMatchers = () => {
     const URL = `${BASE_URL}/clear`
       axios.put(URL)
-        .then((res) => {
+        .then(() => {
            alert("Limpeza realizada com sucesso!")
+           setPageName("home")
         })
         .catch((err) => {
             console.log(err.response)
