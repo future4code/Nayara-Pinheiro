@@ -18,7 +18,7 @@ function App() {
     .catch((err) => {
       alert(err.reponse.data);
     });
-  },[pokeName])
+  },[])
 
   return (
     <div>
