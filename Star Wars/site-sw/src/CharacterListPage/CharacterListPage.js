@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../constantes/base_url";
+import { CharacterCard,Container } from "./styled";
 
 export default function CharacterListPage() {
     const [characterList, setCharacterList] = useState([]);
@@ -18,15 +19,15 @@ export default function CharacterListPage() {
 
     function showCharacters() {
         return characterList.map((character,index) => {
-            return <div key={index}>{character.name}</div>
+            return <CharacterCard key={index}>{character.name}</CharacterCard>
         })
     }
 
     return (
-        <div> 
+        <Container> 
             <h1>LISTA DE PERSONAGENS</h1>
             {showCharacters()}
-        </div>
+        </Container>
        
     )
 

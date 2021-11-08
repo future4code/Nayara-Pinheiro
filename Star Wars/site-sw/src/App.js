@@ -3,7 +3,6 @@ import {useState, useEffect} from "react"
 import CharacterDetailPage from "./CharacterDetailPage/CharacterDetailPage";
 import CharacterListPage from "./CharacterListPage/CharacterListPage";
 
-
 function App() {
   const [currentPage, setCurrentPage] = useState("list")
 
@@ -16,9 +15,9 @@ function App() {
   }
 
   return (
-    <div>
+      <div>
       {selectPage()}
-    </div>
+      </div>
   );
 }
 
