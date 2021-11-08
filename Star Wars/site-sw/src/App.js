@@ -1,7 +1,8 @@
 import React from "react";
-import {useState} from "react"
+import {useState, useEffect} from "react"
 import CharacterDetailPage from "./CharacterDetailPage/CharacterDetailPage";
 import CharacterListPage from "./CharacterListPage/CharacterListPage";
+
 
 function App() {
   const [currentPage, setCurrentPage] = useState("list")
@@ -16,7 +17,6 @@ function App() {
 
   return (
     <div>
-      <h1>Star Wars</h1>
       {selectPage()}
     </div>
   );
