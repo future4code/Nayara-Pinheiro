@@ -1,18 +1,26 @@
 import React from "react";
 import {useState, useEffect} from "react"
-import CharacterDetailPage from "./CharacterDetailPage/CharacterDetailPage";
-import CharacterListPage from "./CharacterListPage/CharacterListPage";
+import CharacterDetailPage from "./pages/CharacterDetailPage/CharacterDetailPage";
+import CharacterListPage from "./pages/CharacterListPage/CharacterListPage"
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("list")
+  const [currentPage, setCurrentPage] = useState("list");
+  const [detailsUrl, setDetailsUrl] = useState("")
 
-  
+  function goToDetailsPage(url) {
+    setCurrentPage("details")
+    setDetailsUrl(url)
+  }
 
-  const selectPage = ()=> {
-    if(currentPage === "list"){
-      return <CharacterListPage/>
-    }else{
-      return <CharacterDetailPage/>
+  function goToListPage() {
+    setCurrentPage("list")
+  };
+
+  function selectPage() {
+    if (currentPage === "list") {
+      return <CharacterListPage goToDetailsPage={goToDetailsPage} />
+    } else {
+      return <CharacterDetailPage goToListPage={goToListPage} url={detailsUrl} />
     }
   }
 

@@ -1,11 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { BASE_URL } from "../constantes/base_url";
+import { BASE_URL } from "../../constantes/base_url";
 import { CharacterCard,Container,Tittle } from "./styled";
 import { Center } from "@chakra-ui/layout";
 
-export default function CharacterListPage() {
+export default function CharacterListPage(props) {
     const [characterList, setCharacterList] = useState([]);
 
     function getCharacterList() {
@@ -20,7 +20,7 @@ export default function CharacterListPage() {
 
     function showCharacters() {
         return characterList.map((character,index) => {
-            return <CharacterCard key={index}>{character.name}</CharacterCard>
+            return <CharacterCard onClick={()=> props.goToDetailsPage(character.url)} key={index}>{character.name}</CharacterCard>
         })
     }
 
