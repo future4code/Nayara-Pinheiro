@@ -6,12 +6,13 @@ export const Container = styled.div`
     text-align: center;
 `
 
+export const Tittle = styled.h1`
+font-size: 60px;
+`
+
 export const CharacterCard = styled.div`
     border: 1px solid black;
     color:black;
-    text-align: center;
-    flex-direction:center;
-    justify-content:center;
     background: white;
     padding: 10px;
     margin: 10px;

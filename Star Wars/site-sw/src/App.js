@@ -6,7 +6,9 @@ import CharacterListPage from "./CharacterListPage/CharacterListPage";
 function App() {
   const [currentPage, setCurrentPage] = useState("list")
 
-  const selectPage = () =>{
+  
+
+  const selectPage = ()=> {
     if(currentPage === "list"){
       return <CharacterListPage/>
     }else{

@@ -2,7 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { BASE_URL } from "../constantes/base_url";
-import { CharacterCard,Container } from "./styled";
+import { CharacterCard,Container,Tittle } from "./styled";
+import { Center } from "@chakra-ui/layout";
 
 export default function CharacterListPage() {
     const [characterList, setCharacterList] = useState([]);
@@ -25,8 +26,10 @@ export default function CharacterListPage() {
 
     return (
         <Container> 
-            <h1>LISTA DE PERSONAGENS</h1>
+            <Tittle>LISTA DE PERSONAGENS</Tittle>
+            <Center display="grid" >
             {showCharacters()}
+            </Center>
         </Container>
        
     )
