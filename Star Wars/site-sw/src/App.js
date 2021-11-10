@@ -1,5 +1,5 @@
 import React from "react";
-import {useState, useEffect} from "react"
+import {useState} from "react"
 import CharacterDetailPage from "./pages/CharacterDetailPage/CharacterDetailPage";
 import CharacterListPage from "./pages/CharacterListPage/CharacterListPage"
 

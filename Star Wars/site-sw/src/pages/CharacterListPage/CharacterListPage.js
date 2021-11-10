@@ -1,21 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import axios from "axios";
-import { BASE_URL } from "../../constantes/base_url";
 import { CharacterCard,Container,Tittle } from "./styled";
 import { Center } from "@chakra-ui/layout";
+import { getCharacterList} from "../../services/request"
 
 export default function CharacterListPage(props) {
     const [characterList, setCharacterList] = useState([]);
 
-    function getCharacterList() {
-        axios.get(`${BASE_URL}/people/`)
-        .then((res) => setCharacterList(res.data.results))
-        .catch((err) => console.log("Erro", err.message))
-    };
 
     useEffect(() => {
-        getCharacterList()
+        getCharacterList(setCharacterList)
     }, []);
 
     function showCharacters() {
